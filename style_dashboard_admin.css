@@ -1,0 +1,81 @@
+@import
+url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: rgb(100, 144, 182);
+}
+
+.sidebar{
+    background-color: aliceblue;
+    width: 350px;
+    height: 100vh;
+}
+
+.sidebar .text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.sidebar .profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.sidebar .profile button{
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(236, 151, 209);
+    width: 80px;
+    height: 80px;
+}
+
+.sidebar .admin-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.sidebar .upload{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar .upload button{
+    margin-top: 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(236, 151, 209);
+    width: 50%;
+    height: 40px;
+}
+
+.sidebar .logout .btn-logout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar .logout .btn-logout .btn{
+    border: none;
+    margin-top: 300px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(236, 151, 209);
+    width: 50%;
+    height: 40px;
+}
+
+
