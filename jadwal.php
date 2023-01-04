@@ -3,7 +3,7 @@ error_reporting(0);
 require('data.php');
 include('templates.php');
 
-$filter_dosen = ""; $filter_kelas = "";
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -38,6 +38,7 @@ $filter_dosen = ""; $filter_kelas = "";
         filterSection($array_hari, $array_matkul, $array_dosen, $array_kelas);
         ?>
     </main>
-    <script src="filterTable.js"></script>
+    <!-- <script src="filterTable.js"></script> -->
+    <script src="ajax.js"></script>
 </body>
 </html>
