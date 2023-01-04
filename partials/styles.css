@@ -1,0 +1,48 @@
+html, body {
+    font-family: 'poppins';
+    height: 100%;
+    margin: 0;
+}
+.content{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #D9D9D9;
+    padding-top: 250px;
+}
+.active{
+    border: none !important;
+    border-radius: 10px !important;
+    color: black !important;
+    background-color: white !important;
+} 
+
+.sidebar{
+    background-color: #A2E8CF;
+    min-width: 299px;
+ }
+ 
+ .container{
+    width: 30px;
+    height: 30px;
+ }
+ li.list-item{
+    margin-bottom: 61px;
+    padding: 13px;
+    border-radius: 10px;
+    color: black;
+    background-color: grey 0.2;
+ }
+
+.list-item:hover{
+    border: none;
+    border-radius: 10px;
+    color: black;
+    transition: 2 ease-in-out;
+    background-color: white;
+ }
+
+ .profile{
+    margin-top: 62px;
+    margin-bottom: 66px;
+ }
+

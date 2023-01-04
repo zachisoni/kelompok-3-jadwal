@@ -1,0 +1,10 @@
+.bg-primary{
+    background-color: #A2E8CF !important;color: #313131;
+}
+.btn-main{
+    background-color: #29BB7E !important;color: #ffffff;
+    transition: 0.5s;
+}
+.btn-main:hover{
+    background-color: #ffffff !important;color: #29BB7E;
+}
