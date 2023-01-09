@@ -56,3 +56,14 @@ html, body {
     margin-left: 150px;
  }
 
+.modal-body{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ .edit-grid input{
+    width: 260px;
+ }
+
+

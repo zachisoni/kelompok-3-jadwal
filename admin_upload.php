@@ -21,10 +21,10 @@ include 'partials/head.php' ?>
                     <h1 class="fs20">Jadwal Perkuliahan</h1>
                 </label>
 
-                <form action="admin_upload.php" method="post">
+                <form action="database/crud.php" method="post" enctype="multipart/form-data">
                     <div class="button-opt d-flex justify-content-between align-items-center">
                         <input class="form-control" type="file" id="file-jadwal" name="file-jadwal" accept=".csv">
-                        <button type="submit" class="btn btn-success" name="upload">Upload File</button>
+                        <button type="submit" class="btn btn-success" name="upload-csv">Upload File</button>
                         <button type="reset" class="btn btn-danger">Reset</button>
                     </div>
                 </form>
@@ -32,7 +32,7 @@ include 'partials/head.php' ?>
                 <?php
                 $file = $_POST['file-jadwal'] ?? null;
 
-                if (isset($_POST['upload'])) {
+                if (isset($_POST['upload-csv'])) {
                     if (empty($file)) {
                         echo '<div class="alert alert-danger fw-bold" role="alert">';
                         echo $_POST['file-jadwal'] . ' <span class="fw-normal">Gagal mengunggah file</span>';
@@ -51,6 +51,8 @@ include 'partials/head.php' ?>
                 include 'partials/table.php';
                 ?>
             </div>
+
+
         </div>
     </div>
 </body>
