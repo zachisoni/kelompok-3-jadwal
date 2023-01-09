@@ -1,4 +1,4 @@
-<?php 
+<?php
 function filterSection(array $hari, array $matkul, array $dosen, array $kelas){
     $filter = array();
     ?>
@@ -44,33 +44,44 @@ function filterSection(array $hari, array $matkul, array $dosen, array $kelas){
 }
 
 function table(array $jadwal){
-    $displayDay = true;
-    echo"<table class='table table-bordered border-secondary table-jadwal' id='table-jadwal-".current($jadwal)['val6']."'>";
-    foreach($jadwal as $row){
-        if($row['val6'] == next($jadwal)['val6'] && $row != $jadwal[0]){
-            echo "<tr>";
-            foreach ($row as $key => $col) {
-                $span = 1;
-                echo "<td>$col</td>";
-            }
-            echo "</tr>";
-        } else if(key($jadwal) == null){
-            echo "</table>";
-        } else {
-            echo "</table>";
-            echo "<h2 class='text-center'>".current($jadwal)['val6']."</h2>";
-            echo"<table class='table table-bordered border-secondary table-jadwal' id='table-jadwal-".current($jadwal)['val6']."'>";
+    for($i = 0; $i < sizeof($jadwal); $i++){
+        if($jadwal[$i]['kelas'] != $jadwal[$i - 1]['kelas']){
             ?>
-            <tr class="table-dark text-center sticky-top m-0">
-                <?php
-                foreach ($jadwal[0] as $head ) {
-                    echo "<th>$head</th>";
-                }
-                ?>
-            </tr>
+            </table>
+            <table class='table table-bordered border-secondary table-jadwal'>
+            <thead class="thead-dark text-center sticky-top table-dark">
+                <tr>
+                    <td colspan="8"><?= $jadwal[$i]['kelas'];?></td>
+                </tr>
+                <tr>
+                    <th>Hari</th>
+                    <th>Slot Waktu</th>
+                    <th>Mata Kuliah</th>
+                    <th>Dosen</th>
+                    <th>Ruang</th>
+                    <th>Durasi Kelas</th>
+                    <th>Tahun Ajaran</th>
+                    <th>Semester</th>
+                </tr>
+            </thead>
             <?php
         }
+        ?>
+        <tr>
+            <td><?= $jadwal[$i]['hari']; ?></td>
+            <td><?= $jadwal[$i]['slot_waktu'];?></td>
+            <td><?= $jadwal[$i]['mata_kuliah']; ?></td>
+            <td><?= $jadwal[$i]['dosen']; ?></td>
+            <td><?= $jadwal[$i]['ruang']; ?></td>
+            <td><?= $jadwal[$i]['jumlah_jam']; ?></td>
+            <td><?= $jadwal[$i]['tahun_ajaran']; ?></td>
+            <td><?= $jadwal[$i]['semester']; ?></td>
+        </tr>
+        <?php
     }
+    ?>
+    </table>
+    <?php
 }
 
 ?>

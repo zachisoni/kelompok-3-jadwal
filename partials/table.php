@@ -3,7 +3,7 @@ require_once "database/config.php";
 ?>
 
 <table class="table table-bordered table-striped">
-    <thead class="thead-dark text-center">
+    <thead class="thead-dark table-dark text-center sticky-top">
         <tr>
             <th>Hari</th>
             <th>Slot Waktu</th>

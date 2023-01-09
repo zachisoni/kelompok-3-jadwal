@@ -1,41 +1,5 @@
 [
     {
-        "id": "4",
-        "slot_waktu": "07.30 -  08.20",
-        "hari": "Senin",
-        "mata_kuliah": "Sistem Operasi",
-        "dosen": "Indra",
-        "ruang": "AA302",
-        "kelas": "55",
-        "jumlah_jam": "7",
-        "tahun_ajaran": "2022 - 2923",
-        "semester": "Ganjil"
-    },
-    {
-        "id": "5",
-        "slot_waktu": "08.20 - 09.10",
-        "hari": "Senin",
-        "mata_kuliah": "Sistem Operasi",
-        "dosen": "Indra",
-        "ruang": "AA302",
-        "kelas": "5",
-        "jumlah_jam": "8",
-        "tahun_ajaran": "2022 - 2923",
-        "semester": "Genap"
-    },
-    {
-        "id": "6",
-        "slot_waktu": "07.30 -  08.20",
-        "hari": "Senin",
-        "mata_kuliah": "Sistem Operasi",
-        "dosen": "Indra",
-        "ruang": "AA302",
-        "kelas": "TI 1A",
-        "jumlah_jam": "4",
-        "tahun_ajaran": "2022 - 2923",
-        "semester": "Ganjil"
-    },
-    {
         "id": "7",
         "slot_waktu": "08.20 - 09.10",
         "hari": "Senin",
@@ -43,18 +7,6 @@
         "dosen": "Indraaaa",
         "ruang": "AA302",
         "kelas": "7",
-        "jumlah_jam": "8",
-        "tahun_ajaran": "2022 - 2923",
-        "semester": "Ganjil"
-    },
-    {
-        "id": "8",
-        "slot_waktu": "08.20 - 09.10",
-        "hari": "Selasa",
-        "mata_kuliah": "Sistem Operasi",
-        "dosen": "Becky",
-        "ruang": "AA302",
-        "kelas": "8",
         "jumlah_jam": "8",
         "tahun_ajaran": "2022 - 2923",
         "semester": "Ganjil"

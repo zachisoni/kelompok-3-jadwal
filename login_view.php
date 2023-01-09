@@ -21,17 +21,11 @@ if (isset($_POST['login'])) {
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/94869fffad.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="partials/styles.css">
-    <title>Login</title>
-    <style>
+<?php 
+$title = "Login";
+include "partials/head.php";
+?>
+<style>
     .left-side-bar {
         min-width: 50%;
     }
@@ -70,8 +64,7 @@ if (isset($_POST['login'])) {
         margin: auto;
         margin-top: 10vh;
     }
-    </style>
-</head>
+</style>
 
 <body>
     <div class="body-screen d-flex">
@@ -98,7 +91,7 @@ if (isset($_POST['login'])) {
                 </div>
             </form>
             <!-- back button -->
-            <a href="jadwal.php">
+            <a href="index.php">
                 <button type="submit"
                     class="btn-back btn btn-primary shadow btn-success position-absolute bottom-0 my-5">
                     <i class="fa-solid fa-arrow-left fa-sm me-2"></i>Back</button>

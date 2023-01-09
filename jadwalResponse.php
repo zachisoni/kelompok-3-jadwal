@@ -1,35 +1,36 @@
 <?php
 include "templates.php";
-include "data.php";
+require_once "database/config.php";
 
+$kelas = "";
+$hari = "";
+$matkul = "";
+$dosen = "";
 
 if($_GET['k'] != "all"){
-    $array_jadwal = array_filter($array_jadwal, function($row){
-        return $row['val6'] == $_GET['k'] || $row['val6'] == "Kelas";
-    });
+    $kelas = $_GET['k'];
 }
 if($_GET['h'] != "all"){
-    $array_jadwal = array_filter($array_jadwal, function($row){
-        return $row['val1'] == $_GET['h'] || $row['val1'] == "Hari";
-    });
+    $hari = $_GET['h'];
 }
 if($_GET['m'] != "all"){
-    $array_jadwal = array_filter($array_jadwal, function($row){
-        return $row['val3'] == $_GET['m'] || $row['val3'] == "Mata Kuliah";
-    });
+    $matkul = $_GET['m'];
 }
 if($_GET['d'] != "all"){
-    $array_jadwal = array_filter($array_jadwal, function($row){
-        return $row['val4'] == $_GET['d'] || $row['val4'] == "Dosen";
-    });
+    $dosen = $_GET['d'];
 }
 
-if(sizeof($array_jadwal) > 1){
-    table($array_jadwal);
-} else{
+$result = $connectDB->query("SELECT * FROM jadwal WHERE kelas REGEXP '$kelas' 
+                                AND hari REGEXP '$hari' 
+                                AND mata_kuliah REGEXP '$matkul' 
+                                AND dosen REGEXP '$dosen';");
+if($result->num_rows > 0){
+    table(iterator_to_array($result));
+}else{
     ?>
-    <h2 class="text-center">No Data</h2>
+    <h2 class="text-center">Tidak Ada Data</h2>
     <?php
+
 }
 
 ?>
