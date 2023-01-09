@@ -1,5 +1,7 @@
 <?php
 require_once 'config.php';
+
+//CREATE JADWAL
 if(isset($_POST['upload-csv'])){
     // Allowed mime types
     $mimes = array('text/x-comma-separated-values', 'text/comma-separated-values', 'application/octet-stream', 'application/vnd.ms-excel', 'application/x-csv', 'text/x-csv', 'text/csv', 'application/csv', 'application/excel', 'application/vnd.msexcel', 'text/plain');
@@ -13,7 +15,7 @@ if(isset($_POST['upload-csv'])){
             // Open uploaded CSV file with read-only mode
             $file = fopen($_FILES['file-jadwal']['tmp_name'], 'r');
             
-            // Skip the first line
+            // Skip header
             fgetcsv($file);
             
             // Parse data from CSV file line by line
@@ -54,9 +56,7 @@ if(isset($_POST['upload-csv'])){
     header("Location:../admin_upload.php".$qstring);
 }
 
-// Redirect to the listing page
-
-// EDIT JADWAL
+// UPDATE JADWAL
 
 if (isset($_POST['ubah'])) {
     $slot_waktu  = $_POST['slot_waktu'];

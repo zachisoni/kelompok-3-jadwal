@@ -29,21 +29,6 @@ include 'partials/head.php' ?>
                     </div>
                 </form>
 
-                <?php
-                $file = $_POST['file-jadwal'] ?? null;
-
-                if (isset($_POST['upload-csv'])) {
-                    if (empty($file)) {
-                        echo '<div class="alert alert-danger fw-bold" role="alert">';
-                        echo $_POST['file-jadwal'] . ' <span class="fw-normal">Gagal mengunggah file</span>';
-                        echo    '</div>';
-                    } else {
-                        echo '<div class="alert alert-success fw-bold" role="alert">';
-                        echo $_POST['file-jadwal'] . ' <span class="fw-normal">Berhasil diunggah</span>';
-                        echo    '</div>';
-                    }
-                }
-                ?>
             </div>
 
             <div class="table-admin ">

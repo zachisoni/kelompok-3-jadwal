@@ -5,7 +5,6 @@ require_once "database/config.php";
 <table class="table table-bordered table-striped">
     <thead class="thead-dark text-center">
         <tr>
-            <th>No</th>
             <th>Hari</th>
             <th>Slot Waktu</th>
             <th>Mata Kuliah</th>
@@ -28,12 +27,14 @@ require_once "database/config.php";
             }
 
             $jsonEncode = json_encode($json, JSON_PRETTY_PRINT);
+            
             file_put_contents('database/data.json', $jsonEncode);
+            
             $jsonDecode = json_decode(file_get_contents('database/data.json'), true);
+
             foreach ($jsonDecode as $data) {
         ?>
         <tr>
-            <td><?= $data['id']; ?></td>
             <td><?= $data['hari']; ?></td>
             <td><?= $data['slot_waktu']; ?></td>
             <td><?= $data['mata_kuliah']; ?></td>
@@ -61,7 +62,7 @@ require_once "database/config.php";
         } else {
             ?>
         <tr>
-            <td colspan=" 11" class="text-center">Belum ada Jadwal
+            <td colspan=" 10" class="text-center">Belum ada Jadwal
             </td>
         </tr>
         <?php
