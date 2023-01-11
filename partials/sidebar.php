@@ -5,8 +5,8 @@
         </div>
         <ul class="list-unstyled my-5">
             <li class="profile py-3 pe-5 d-flex align-items-center bg-light rounded-5">
-                <i class="fa-solid fa-user-large text-primary fa-xl mx-4"></i>Admin
-                <!-- <p class="fs-11">Admin</p> -->
+                <i class="fa-solid fa-user-large text-primary fa-xl mx-4"></i>
+                Admin - <?= $_SESSION['username'] ?><!-- <p class="fs-11">Admin</p> -->
             </li>
             <a href="admin_upload.php" class="text-decoration-none text-dark">
                 <li class="list-item ms-3 <?php if ($isActive == "unggah-jadwal") {

@@ -28,10 +28,10 @@ include "partials/head.php";
 <body>
     <header class="m-0 p-3 bg-primary shadow-sm mb-4">
         <div class="w-100 p-2 d-flex justify-content-end">
-            <a href="login_view.php"><button class="btn btn-main px-4 py-2">Log In</button></a>
+            <a href="login.php" class="btn btn-main px-4 py-2">Log In</a>
         </div>
         <div class="m-0 w-100 d-flex flex-column justify-content-center text-center align-items-center">
-            <h1 class="h1">JADWAL PELAJARAN</h1>
+            <h1>JADWAL PELAJARAN</h1>
             <p class="fs-5">
                 Politeknik Negeri Jakarta <br>2022/2023
             </p>

@@ -1,4 +1,6 @@
 <?php
 session_start();
     $_SESSION['berhasil'] = false;
-    header('Location: login_view.php');
+    unset($_SESSION['username']);
+    unset($_SESSION['error']);
+    header('Location: login.php');

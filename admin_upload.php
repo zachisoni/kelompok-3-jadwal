@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION['berhasil'] == false) {
-    header('Location: login_view.php');
+    header('Location: login.php');
     die();
 }
 ?>
