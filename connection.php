@@ -1,6 +1,6 @@
 <?php
-    $conn = mysqli_connect("localhost", "root", "", "database_jadwal");
-    $connlogin = mysqli_connect("localhost", "root", "", "database_jadwal");
+    $conn = mysqli_connect("localhost", "root", "", "web_lanjut");
+    $connlogin = mysqli_connect("localhost", "root", "", "web_lanjut");
 
     if(!$connlogin){
         echo "Connection failed";
