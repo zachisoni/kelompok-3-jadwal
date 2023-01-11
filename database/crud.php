@@ -65,7 +65,7 @@ if (isset($_POST['ubah'])) {
     $dosen  = $_POST['dosen'];
     $ruang  = $_POST['ruang'];
     $kelas  = $_POST['kelas'];
-    $jumlah_jam  = $_POST['slot_waktu'];
+    $jumlah_jam  = $_POST['jumlah_jam'];
     $tahun_ajaran  = $_POST['tahun_ajaran'];
     $semester  = $_POST['semester'];
     $id  = $_POST['no_jadwal'];

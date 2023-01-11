@@ -96,7 +96,7 @@ $(document).on("click", "#edit", function() {
     let mata_kuliah = $(this).data('mata-kuliah');
     let dosen = $(this).data('dosen');
     let ruang = $(this).data('ruang');
-    let kelas = $(this).data('id');
+    let kelas = $(this).data('kelas');
     let jumlah_jam = $(this).data('jumlah-jam');
     let tahun_ajaran = $(this).data('tahun-ajaran');
     let semester = $(this).data('semester');
