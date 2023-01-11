@@ -55,17 +55,15 @@
                             </div>
                         </div>
                     </div>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" name="ubah" class="btn btn-primary">Simpan Perubahan</button>
+                <button type="submit" name="ubah" class="btn btn-primary" id="ubah">Simpan Perubahan</button>
             </div>
             </form>
         </div>
     </div>
 </div>
-
 <!-- DELETE MODAL -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -87,7 +85,6 @@
         </div>
     </div>
 </div>
-
 <script>
 $(document).on("click", "#edit", function() {
     let id = $(this).data('id');
@@ -96,11 +93,10 @@ $(document).on("click", "#edit", function() {
     let mata_kuliah = $(this).data('mata-kuliah');
     let dosen = $(this).data('dosen');
     let ruang = $(this).data('ruang');
-    let kelas = $(this).data('id');
+    let kelas = $(this).data('kelas');
     let jumlah_jam = $(this).data('jumlah-jam');
     let tahun_ajaran = $(this).data('tahun-ajaran');
     let semester = $(this).data('semester');
-
     $(".modal-body #id-jadwal").val(id);
     $(".modal-body #slot-waktu").val(slot_waktu);
     $(".modal-body #hari").val(hari);
@@ -112,9 +108,13 @@ $(document).on("click", "#edit", function() {
     $(".modal-body #tahun-ajaran").val(tahun_ajaran);
     $(".modal-body #semester").val(semester);
 })
+
+$(document).on("click", "#ubah", function(){
+    alert("Data berhasil diupdate");
+})
+
 $(document).on("click", "#delete", function() {
     let id = $(this).data('id');
-
     $("#id-label").text(id)
     $("#id-input").val(id)
 })
