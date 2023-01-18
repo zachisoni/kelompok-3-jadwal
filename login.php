@@ -14,18 +14,19 @@
 
         $sql = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
         $result = mysqli_query($connlogin, $sql);
-        if($result -> num_rows > 0){
+        if($result -> num_rows > 0 && $_SESSION["Captcha"] == $_POST["nilaiCaptcha"]){
             $row = mysqli_fetch_assoc($result);
             $_SESSION['username'] = $row['username'];
             $_SESSION['berhasil'] = true;
             header("Location: admin_upload.php");
+        } else if($_SESSION["Captcha"] != $_POST["nilaiCaptcha"]){
+            echo "<script>alert('Captcha salah/ Silahkan masukkan angka yang sesuai dengan gambar.')</script>";
         }else{
             $_SESSION['error'] = "Username atau password Anda salah. Silakan coba lagi.";
             echo "<script>alert('Username atau password Anda salah. Silakan coba lagi.')</script>";
         }
-    }
-    if($_SESSION["Captcha"] != $_POST["nilaiCaptcha"]){
-        echo "<script>alert('Captcha salah/ Silahkan masukkan angka yang sesuai dengan gambar.')</script>";
+        // if(){
+        // }
     }
 ?>
 
