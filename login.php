@@ -19,12 +19,13 @@
             $_SESSION['username'] = $row['username'];
             $_SESSION['berhasil'] = true;
             header("Location: admin_upload.php");
-        // }else if($_SESSION["Captcha"] != $_POST["nilaiCaptcha"]){
-        //     echo "<script>alert('Captcha salah/ Silahkan masukkan angka yang sesuai dengan gambar.')</script>";
         }else{
             $_SESSION['error'] = "Username atau password Anda salah. Silakan coba lagi.";
             echo "<script>alert('Username atau password Anda salah. Silakan coba lagi.')</script>";
         }
+    }
+    if($_SESSION["Captcha"] != $_POST["nilaiCaptcha"]){
+        echo "<script>alert('Captcha salah/ Silahkan masukkan angka yang sesuai dengan gambar.')</script>";
     }
 ?>
 
