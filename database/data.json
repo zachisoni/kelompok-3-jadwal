@@ -1,5 +1,17 @@
 [
     {
+        "id": "54",
+        "slot_waktu": "08.20 - 09.10",
+        "hari": "Senin",
+        "mata_kuliah": "Sistem Operasi",
+        "dosen": "Indra",
+        "ruang": "AA302",
+        "kelas": "TI 1A",
+        "jumlah_jam": "4",
+        "tahun_ajaran": "2022 - 2923",
+        "semester": "Ganjil"
+    },
+    {
         "id": "55",
         "slot_waktu": "08.20 - 09.10",
         "hari": "Selasa",
@@ -7,7 +19,7 @@
         "dosen": "Indra",
         "ruang": "AA302",
         "kelas": "TI 1A",
-        "jumlah_jam": "5",
+        "jumlah_jam": "4",
         "tahun_ajaran": "2022 - 2923",
         "semester": "Ganjil"
     },
@@ -46,5 +58,29 @@
         "jumlah_jam": "4",
         "tahun_ajaran": "2022 - 2923",
         "semester": "Ganjil"
+    },
+    {
+        "id": "63",
+        "slot_waktu": "12.00-13.99",
+        "hari": "Senin",
+        "mata_kuliah": "Mobile",
+        "dosen": "Dimas",
+        "ruang": "A303",
+        "kelas": "TI 3B",
+        "jumlah_jam": "3",
+        "tahun_ajaran": "2002",
+        "semester": "Ganjil"
+    },
+    {
+        "id": "67",
+        "slot_waktu": "08.20 - 09.10",
+        "hari": "Senin",
+        "mata_kuliah": "Sistem Operasi",
+        "dosen": "Dimas",
+        "ruang": "A303",
+        "kelas": "TI B",
+        "jumlah_jam": "2",
+        "tahun_ajaran": "2017",
+        "semester": "Genap"
     }
 ]

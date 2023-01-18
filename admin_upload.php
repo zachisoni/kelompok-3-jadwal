@@ -23,6 +23,8 @@ include 'partials/head.php' ?>
 
                 <form action="database/crud.php" method="post" enctype="multipart/form-data">
                     <div class="button-opt d-flex justify-content-between align-items-center mb-5 mx-4">
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#createModal"><i class="fa-solid fa-plus"></i></button>
                         <input class="form-control m-2" type="file" id="file-jadwal" name="file-jadwal" accept=".csv">
                         <button type="submit" class="btn btn-success m-2 w-25" name="upload-csv">Upload File</button>
                         <button type="reset" class="btn btn-danger m-2">Reset</button>

@@ -1,4 +1,4 @@
-<div class="p-4 w-25 shadow h-100" style="background-color: #A2E8CF !important;min-height: 700px;">
+<div class="p-4 w-25 shadow h-100" style="background-color: #A2E8CF !important;min-height: 1000px;">
     <div class="sticky-top">
         <div class="header-box">
             <h3 class="rounded text-center">E - Schedule</h3>
@@ -6,7 +6,8 @@
         <ul class="list-unstyled my-5">
             <li class="profile py-3 pe-5 d-flex align-items-center bg-light rounded-5">
                 <i class="fa-solid fa-user-large text-primary fa-xl mx-4"></i>
-                Admin - <?= $_SESSION['username'] ?><!-- <p class="fs-11">Admin</p> -->
+                Admin - <?= $_SESSION['username'] ?>
+                <!-- <p class="fs-11">Admin</p> -->
             </li>
             <a href="admin_upload.php" class="text-decoration-none text-dark m-4 rounded bg-light">
                 <li class="list-item ms-3 bg-light rounded <?php if ($isActive == "unggah-jadwal") {
@@ -18,9 +19,10 @@
             <li>
             </li>
         </ul>
-    
+
         <form action="logout.php">
-            <button type="submit" class="btn btn-danger text-decoration-none text-light bottom-0" name="logout">
+            <button type="submit" class="logout-btn btn btn-danger text-decoration-none text-light bottom-0"
+                name="logout" style="margin-top: 300px; width: 100%">
                 Logout <i class="fa-solid fa-right-from-bracket fa-sm ms-3"></i></button>
         </form>
 

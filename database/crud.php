@@ -1,6 +1,28 @@
 <?php
 require_once 'config.php';
+//CREATE JADWAL BY INPUT
+if (isset($_POST['buat'])) {
+    $slot_waktu  = $_POST['slot_waktu'];
+    $hari  = $_POST['hari'];
+    $mata_kuliah  = $_POST['mata_kuliah'];
+    $dosen  = $_POST['dosen'];
+    $ruang  = $_POST['ruang'];
+    $kelas  = $_POST['kelas'];
+    $jumlah_jam  = $_POST['jumlah_jam'];
+    $tahun_ajaran  = $_POST['tahun_ajaran'];
+    $semester  = $_POST['semester'];
+    $id  = $_POST['no_jadwal'];
 
+    $query = "INSERT INTO jadwal(slot_waktu, hari, mata_kuliah, dosen, ruang, kelas, jumlah_jam, tahun_ajaran, semester)
+             VALUE('$slot_waktu', '$hari', '$mata_kuliah', '$dosen', '$ruang', '$kelas', '$jumlah_jam', '$tahun_ajaran', '$semester')";
+    $result = $connectDB->query($query);
+    if ($result) {
+        echo "<script>alert('Jadwal berhasil ditambahkan')</script>";
+    }else{
+        echo "<script>alert('Terjadi Kesalahan')</script>";
+    }
+    header('Location:../admin_upload.php');
+}
 //CREATE JADWAL
 if(isset($_POST['upload-csv'])){
     // Allowed mime types
@@ -80,6 +102,11 @@ if (isset($_POST['ubah'])) {
         '", tahun_ajaran="' . $tahun_ajaran .
         '", semester="' . $semester .
         '" WHERE id=' . $id);
+        if ($result) {
+            echo "<script>alert('Jadwal berhasil ditambahkan')</script>";
+        }else{
+            echo "<script>alert('Terjadi Kesalahan')</script>";
+        }
     header('Location:../admin_upload.php');
 }
 // DELETE JADWAL
