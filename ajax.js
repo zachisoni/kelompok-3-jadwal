@@ -1,11 +1,5 @@
 var xhttp = new XMLHttpRequest();
 
-if(window.XMLHttpRequest){
-    xhttp = new XMLHttpRequest();
-}else if(window.ActiveXObject){
-    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-}
-
 function search(){
     xhttp.responseText;
     xhttp.abort();

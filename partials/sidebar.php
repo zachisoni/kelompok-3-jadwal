@@ -1,4 +1,4 @@
-<div class="sidebar px-4 py-4 w-25">
+<div class="p-4 w-25 shadow h-100" style="background-color: #A2E8CF !important;min-height: 700px;">
     <div class="sticky-top">
         <div class="header-box">
             <h3 class="rounded text-center">E - Schedule</h3>
@@ -8,11 +8,11 @@
                 <i class="fa-solid fa-user-large text-primary fa-xl mx-4"></i>
                 Admin - <?= $_SESSION['username'] ?><!-- <p class="fs-11">Admin</p> -->
             </li>
-            <a href="admin_upload.php" class="text-decoration-none text-dark">
-                <li class="list-item ms-3 <?php if ($isActive == "unggah-jadwal") {
+            <a href="admin_upload.php" class="text-decoration-none text-dark m-4 rounded bg-light">
+                <li class="list-item ms-3 bg-light rounded <?php if ($isActive == "unggah-jadwal") {
                                                                     echo 'active shadow ';
                                                             } ?> ">
-                    <i class="fa-solid fa-file-import fa-xl me-3"></i>Unggah Jadwal
+                    <i class="fa-solid fa-file-import fa-xl m-4 rounded"></i>Unggah Jadwal
                 </li>
             </a>
             <li>
