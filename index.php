@@ -6,6 +6,20 @@ require_once "database/config.php";
 
 session_start();
 
+if (isset($_GET['pageno'])) {
+    $pageno = $_GET['pageno'];
+    } else {
+    $pageno = 1;
+    }
+
+$no_of_records_per_page = 2;
+$offset = ($pageno-1) * $no_of_records_per_page;
+
+$total_pages_sql = "SELECT * FROM jadwal";
+$result = $connectDB->query($total_pages_sql);
+$total_rows = $result->num_rows;
+$total_pages = ceil($total_rows / $no_of_records_per_page);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,15 +67,38 @@ session_start();
     <main class="d-flex flex-row-reverse">
         <div class="jadwal p-1 w-75">
             <?php 
-            $jadwal = $connectDB->query("SELECT * FROM jadwal;");
+            $jadwal = $connectDB->query("SELECT * FROM jadwal LIMIT $offset, $no_of_records_per_page;");
             if($jadwal->num_rows > 0){
-                table(iterator_to_array($jadwal));
+                while($row = $jadwal->fetch_array()){
+                    table(iterator_to_array($jadwal));
+                } 
             } else {
                 ?>
                 <h2 class="text-center">Tidak Ada Data</h2>
                 <?php
             }
             ?>
+            <div class="mx-auto text-center">
+<ul class="pagination">
+<li><a href="?pageno=1">First</a></li>
+<li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+<a class = "p-3" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+</li>
+<?php
+for ($i = 1; $i <= $total_pages; $i++) {
+    if ($i != $pageno) {
+        echo "<a class = 'p-3' href='index.php?pageno=$i'>$i</a>";
+    } else {
+        echo "<a class = 'p-3' href='#'>$i</a>";
+    }
+} ?>
+<li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+<a class = "p-3" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+</li>
+<li><a class = "p-3" href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
+
+</ul> 
+    </div>
         </div>
         <?php 
         $array_dosen = array();
@@ -86,5 +123,9 @@ session_start();
         ?>
     </main>
     <script src="ajax.js"></script>
+
+
+
+
 </body>
 </html>
