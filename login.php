@@ -40,9 +40,6 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <div class="alert alert-warning fixed-top" role="alert">
-            <?php echo $_SESSION['error']?>
-        </div>
 
         <div class="container pt-3">
             <a href="index.php" class="btn-close" aria-label="Close"></a>

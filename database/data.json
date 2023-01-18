@@ -1,17 +1,5 @@
 [
     {
-        "id": "54",
-        "slot_waktu": "08.20 - 09.10",
-        "hari": "Senin",
-        "mata_kuliah": "Sistem Operasi",
-        "dosen": "Indra",
-        "ruang": "AA302",
-        "kelas": "TI 1b",
-        "jumlah_jam": "4",
-        "tahun_ajaran": "2022 - 2923",
-        "semester": "Ganjil"
-    },
-    {
         "id": "55",
         "slot_waktu": "08.20 - 09.10",
         "hari": "Selasa",
@@ -19,7 +7,7 @@
         "dosen": "Indra",
         "ruang": "AA302",
         "kelas": "TI 1A",
-        "jumlah_jam": "3",
+        "jumlah_jam": "5",
         "tahun_ajaran": "2022 - 2923",
         "semester": "Ganjil"
     },
