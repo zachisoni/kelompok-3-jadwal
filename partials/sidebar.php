@@ -1,4 +1,4 @@
-<div class="p-4 w-25 shadow h-100" style="background-color: #A2E8CF !important;min-height: 1000px;">
+<div class="p-4 w-25 shadow h-100 sticky-top" style="background-color: #A2E8CF !important;height: 100%;">
     <div class="sticky-top">
         <div class="header-box">
             <h3 class="rounded text-center">E - Schedule</h3>

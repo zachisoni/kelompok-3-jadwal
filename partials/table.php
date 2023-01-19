@@ -6,15 +6,15 @@ require_once "database/config.php";
     <thead class="thead-dark table-dark text-center sticky-top">
         <tr>
             <th>Hari</th>
-            <th>Slot Waktu</th>
+            <th style="width:15%;">Slot Waktu</th>
             <th>Mata Kuliah</th>
             <th>Dosen</th>
             <th>Ruang</th>
             <th>Kelas</th>
             <th>Durasi Kelas</th>
-            <th>Tahun Ajaran</th>
+            <th style="width: 15%;">Tahun Ajaran</th>
             <th>Semester</th>
-            <th>Action</th>
+            <th style="width: 10%;">Action</th>
         </tr>
     </thead>
     <tbody>
