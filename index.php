@@ -78,27 +78,26 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
                 <?php
             }
             ?>
-            <div class="mx-auto text-center">
-<ul class="pagination">
-<li><a href="?pageno=1">First</a></li>
-<li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
-<a class = "p-3" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
-</li>
-<?php
-for ($i = 1; $i <= $total_pages; $i++) {
-    if ($i != $pageno) {
-        echo "<a class = 'p-3' href='index.php?pageno=$i'>$i</a>";
-    } else {
-        echo "<a class = 'p-3' href='#'>$i</a>";
-    }
-} ?>
-<li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
-<a class = "p-3" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
-</li>
-<li><a class = "p-3" href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
+            <ul class="pagination justify-content-center mx-auto">
 
-</ul> 
-    </div>
+                <li> <a class = "p-3 btn btn-dark m-2" href="?pageno=1">First</a> </li>
+                <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+                    <a class = "p-3 btn btn-dark m-2" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+                </li>
+                <?php
+                for ($i = 1; $i <= $total_pages; $i++) {
+                    if ($i != $pageno) {
+                    echo "<li> <a class = 'p-3 btn btn-dark m-2' href='index.php?pageno=$i'>$i</a> </li>";
+                    } else {
+                    echo "<li> <a class = 'p-3 btn btn-primary m-2' href='#'>$i</a> </li>";
+                     }
+                } ?>
+                <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+                    <a class = "p-3 btn btn-dark m-2" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+                </li>
+                <li> <a class = "p-3 btn btn-dark m-2" href="?pageno=<?php echo $total_pages; ?>">Last</a> </li>
+
+                </ul> 
         </div>
         <?php 
         $array_dosen = array();
