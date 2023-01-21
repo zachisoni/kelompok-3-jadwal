@@ -27,7 +27,7 @@ function filterSection(array $hari, array $matkul, array $dosen, array $kelas){
                 }
                 echo "<label for='filter-$tipe'>$label</label>";
                 echo "<select  name='$tipe' id='filter-$tipe'
-                        class='form-select bg-color-gray mb-3'>";
+                        class='form-select bg-color-gray mb-3' onchange='filter(`jadwalResponse.php`);'>";
                 echo"<option value='all'>Semua $label</option>";
                 foreach ($filter as $value) {
                     if($value == "$label") continue;
@@ -37,8 +37,6 @@ function filterSection(array $hari, array $matkul, array $dosen, array $kelas){
                 echo "</select>";
             }
         ?>
-        <!-- <input type="submit" name="filter" value="Filter" class="btn btn-primary"> -->
-        <button class="btn btn-primary" onclick="search()">Filter</button>
     </div>
     <?php
 }

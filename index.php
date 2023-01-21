@@ -1,6 +1,5 @@
 <?php 
 error_reporting(0);
-// require "data.php";
 include "templates.php" ;
 require_once "database/config.php";
 
@@ -12,7 +11,7 @@ if (isset($_GET['pageno'])) {
     $pageno = 1;
     }
 
-$no_of_records_per_page = 2;
+$no_of_records_per_page = 5;
 $offset = ($pageno-1) * $no_of_records_per_page;
 
 $total_pages_sql = "SELECT * FROM jadwal";
@@ -52,7 +51,7 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
         }
     </style>
 </head>
-<body>
+<body onload="filter('jadwalResponse.php');">
     <header class="m-0 p-3 bg-primary shadow-sm mb-4">
         <div class="w-100 p-2 d-flex justify-content-end">
             <a href="login.php" class="btn btn-main px-4 py-2">Log In</a>
@@ -66,46 +65,15 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
     </header>
     <main class="d-flex flex-row-reverse">
         <div class="jadwal p-1 w-75">
-            <?php 
-            $jadwal = $connectDB->query("SELECT * FROM jadwal LIMIT $offset, $no_of_records_per_page;");
-            if($jadwal->num_rows > 0){
-                while($row = $jadwal->fetch_array()){
-                    table(iterator_to_array($jadwal));
-                } 
-            } else {
-                ?>
-                <h2 class="text-center">Tidak Ada Data</h2>
-                <?php
-            }
-            ?>
-            <ul class="pagination justify-content-center mx-auto">
-
-                <li> <a class = "p-3 btn btn-dark m-2" href="?pageno=1">First</a> </li>
-                <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
-                    <a class = "p-3 btn btn-dark m-2" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
-                </li>
-                <?php
-                for ($i = 1; $i <= $total_pages; $i++) {
-                    if ($i != $pageno) {
-                    echo "<li> <a class = 'p-3 btn btn-dark m-2' href='index.php?pageno=$i'>$i</a> </li>";
-                    } else {
-                    echo "<li> <a class = 'p-3 btn btn-primary m-2' href='#'>$i</a> </li>";
-                     }
-                } ?>
-                <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
-                    <a class = "p-3 btn btn-dark m-2" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
-                </li>
-                <li> <a class = "p-3 btn btn-dark m-2" href="?pageno=<?php echo $total_pages; ?>">Last</a> </li>
-
-                </ul> 
         </div>
         <?php 
         $array_dosen = array();
         $array_hari = array();
         $array_matkul = array();
         $array_kelas = array();
+        $filter = $connectDB->query($total_pages_sql);
 
-        foreach (iterator_to_array($jadwal) as $row) {
+        foreach (iterator_to_array($filter) as $row) {
             if($row[1] != "Hari"){
                 array_push($array_hari, $row["hari"]);
                 array_push($array_matkul, $row["mata_kuliah"]);

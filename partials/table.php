@@ -1,5 +1,14 @@
 <?php
-require_once "database/config.php";
+require_once "../database/config.php";
+
+if (isset($_GET['pageno'])) {
+    $pageno = $_GET['pageno'];
+} else {
+    $pageno = 1;
+}
+
+$limit = 5;
+$offset = ($pageno - 1) * $limit;
 ?>
 
 <table class="table table-bordered table-striped">
@@ -19,7 +28,7 @@ require_once "database/config.php";
     </thead>
     <tbody>
         <?php
-        $result = $connectDB->query('SELECT * FROM jadwal');
+        $result = $connectDB->query('SELECT * FROM jadwal;');
         $json = array();
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -28,9 +37,34 @@ require_once "database/config.php";
 
             $jsonEncode = json_encode($json, JSON_PRETTY_PRINT);
             
-            file_put_contents('database/data.json', $jsonEncode);
+            file_put_contents('../database/data.json', $jsonEncode);
             
-            $jsonDecode = json_decode(file_get_contents('database/data.json'), true);
+            $jsonDecode = json_decode(file_get_contents('../database/data.json'), true);
+
+            $total_item = count($jsonDecode);
+            $total_pages = ceil($total_item / $limit);
+            $jsonDecode = array_splice($jsonDecode, $offset, $limit);
+
+            if($_GET['k'] != "all"){
+                $jsonDecode = array_filter($jsonDecode, function($value){
+                    return $value['kelas'] == $_GET['k'];
+                });
+            }
+            if($_GET['h'] != "all"){
+                $jsonDecode = array_filter($jsonDecode, function($value){
+                    return $value['hari'] == $_GET['h'];
+                });
+            }
+            if($_GET['m'] != "all"){
+                $jsonDecode = array_filter($jsonDecode, function($value){
+                    return $value['mata_kuliah'] == $_GET['m'];
+                });
+            }
+            if($_GET['d'] != "all"){
+                $jsonDecode = array_filter($jsonDecode, function($value){
+                    return $value['dosen'] == $_GET['d'];
+                });
+            }
 
             foreach ($jsonDecode as $data) {
         ?>
@@ -70,7 +104,16 @@ require_once "database/config.php";
         ?>
     </tbody>
 </table>
-
 <?php
 require 'modals.php';
 ?>
+<ul class="pagination justify-content-center mx-auto">
+    <?php
+    for ($i = 1; $i <= $total_pages; $i++) {
+        if ($i != $pageno) {
+        echo "<li> <a class = 'p-3 btn border border-dark m-2 pagination' onclick='changePage($i, `partials/table.php`)'>$i</a> </li>";
+        } else {
+        echo "<li> <a class = 'p-3 btn text-primary border border-primary m-2' href='#'>$i</a> </li>";
+         }
+    } ?>
+</ul> 
